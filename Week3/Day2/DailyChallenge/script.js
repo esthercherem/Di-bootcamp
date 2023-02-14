@@ -5,7 +5,7 @@
 // const fruits = ["Banana", "Apples", "Oranges", "Blueberries"];
 // Remove Banana from the array.
 const fruits = ["Banana", "Apples", "Oranges", "Blueberries"];
-fruits.splice(0,1);
+fruits.shift();
 
 // Sort the array in alphabetical order.
 
@@ -40,4 +40,4 @@ console.log(fruits);
 
 const moreFruits = ["Banana", ["Apples", ["Oranges"], "Blueberries"]];
 
-console.log(moreFruits[1][1][0])
+console.log(moreFruits[1][1][0]);
