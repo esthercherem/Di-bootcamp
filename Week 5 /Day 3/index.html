@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!-- <form>
+    <input type="button " name="test" value="click me" onclick="inform()">
+</form>
+<script>
+    function inform(){
+        alert("You clicked me")
+    }
+
+</script> -->
+
+<!-- <table id="sampleTable" border="1">
+    <tr>
+        <td>Row1 cell1</td>
+        <td>Row1 cell2</td>
+    </tr>
+    <tr>
+        <td>Row2 cell1</td>
+        <td>Row2 cell2</td>
+    </tr>
+  </table>
+  <input type="button" onclick="insertRow()" value="Insert row">
+  <script>
+    function insertRow() {
+      // get a reference to the table
+      let table = document.getElementById("sampleTable");
+      // create a new row element
+      let newRow = table.insertRow();
+      // create new cells for the row
+      let cell1 = newRow.insertCell(0);
+      let cell2 = newRow.insertCell(1);
+      // add text to the new cells
+      cell1.innerHTML = "New row cell 1";
+      cell2.innerHTML = "New row cell 2";
+    }
+  </script> -->
+
+<!-- 
+  <html>
+    <body>
+        <button id="btn">Click me</button>
+        <button id="btn1">Hey Hey</button>
+    
+        <script>
+            let x = document.getElementById("btn")
+            let y = document.getElementById("btn1")
+    
+            y.addEventListener("click", RespondClick);
+            y.addEventListener("mouseover", RespondMouseOver);
+    
+            x.addEventListener("click", RespondClick); 
+            x.addEventListener("mouseover", RespondMouseOver); 
+            x.addEventListener("mouseout", RespondMouseOut); 
+    
+            function RespondClick() { 
+                alert("Button Clicked")
+            } 
+    
+            function RespondMouseOver() { 
+                alert("My mouse is over the btn")
+            } 
+    
+            function RespondMouseOut() { 
+                alert("My mouse is out of the btn")
+            }     
+    
+        </script>
+    </body>
+    </html> -->
+
+
+    <!-- <html>
+<body>
+    <button id="btn">Click me</button>
+    <button id="btn1">Hey Hey</button>
+
+    <script>
+        let x = document.getElementById("btn")
+        let y = document.getElementById("btn1")
+
+        y.addEventListener("mouseover", RespondMouseOver);
+
+        x.addEventListener("mouseover", RespondMouseOver); 
+
+        function RespondMouseOver(e) { 
+            console.log("e", e) 
+            // all the properties of the event object
+            console.log("My mouse is over the btn named" + e.target.innerHTML)
+            console.log("e.type: ", e.type)
+            // e.type: mouseover
+            console.log("e.target: ", e.target)
+            // e.target:  <button id=​"btn1">​Hey Hey​</button>​
+        } 
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!-- Exercise 2
+Add a few event listener to the button. The event listeners should change the style of the button -->
+
+<button id="jsstyle">Style</button>
+<script>
+  // get a reference to the button element
+  let button = document.getElementById('jsstyle');
+// add a "click" event listener to change the text
+button.addEventListener('click', function() {
+  if (this.textContent === 'Style') {
+    this.textContent = 'Clicked';
+  } else {
+    this.textContent = 'Style';
+  }
+});
+  // add a "mouseover" event listener to change the background color
+  button.addEventListener('mouseover', function() {
+    this.style.backgroundColor = 'red';
+  });
+  // add a "mouseout" event listener to change the background color back
+  button.addEventListener('mouseout', function() {
+    this.style.backgroundColor = '';
+  });
+  </script>
+
+
+<!-- 
+Exercise 3
+Add a click event listener to the div
+
+Add a few event listeners to the button. With at least one click event. The event listeners should change the style of the button
+
+Check how the propagation works and try to prevent it -->
+
+<div>
+    <button id="jsstyle">Style</button>
+</div>
+
+
+
+</body>
+</html>

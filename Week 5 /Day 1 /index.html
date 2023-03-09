@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <body>
+    Exercise 1
+<html>
+<body>
+  <div>Users:</div>
+  <ul>
+    <li>John</li>
+    <li>Pete</li>
+  </ul>
+</body>
+</html> -->
+<!-- For each of the questions, find 2 WAYS of accessing :
+
+1. The div DOM node?
+getElementsByTagName("div")[0];
+document.querySelector("div");
+
+2. The ul DOM node?
+
+getElementsByTagName("ul")[0];
+document.querySelector("ul");
+
+
+3. The second li (with Pete)? -->
+<!-- getElementsByTagName("li")[1];
+document.querySelector(`li:nth-child(2)); -->
+
+
+
+
+<!-- Example:
+<html>
+<head>
+    <title>DOM!!!</title>
+</head>
+<body>
+  <h1 id="one">Welcome</h1>
+  <p>This is the welcome message.</p>
+  <h2>Technology</h2>
+  <p>This is the technology section.</p>
+
+  <script>
+        let text = document.getElementById("one").innerHTML;
+        alert("The first heading is " + text); //output : "The first heading is Welcome"
+  </script>
+
+</body>
+</html> -->
+
+
+<!-- <html>
+<head>
+    <title>DOM!!!</title>
+</head>
+<body>
+  <h1>Welcome</h1>
+  <p>This is the welcome message.</p>
+  <h2>Technology</h2>
+  <p id="second">This is the technology section.</p>
+
+  <script>
+    let paragraphs = document.getElementsByTagName("p");
+    alert("Content in the second paragraph is " + paragraphs[1].innerHTML);
+    document.getElementById("second").innerHTML = "The orginal message is changed.";
+  </script>
+
+</body>
+</html>
+
+Creating/Adding/Deleting DOM Nodes
+1. Creating Elements: CreateElement()
+  Syntax : document.createElement('tag')
+  let newDiv = document.createElement('div')  
+
+
+2. Creating Text: CreateTextNode()
+Syntax : document.createTextNode('text')  
+let newTextNode = document.createTextNode('Here I am');
+
+
+3. Adding Element : AppendChild()
+Adding an element as the last child of the node parent
+
+Syntax: `element.appendChild`
+newDiv.appendChild(newTextNode);
+document.body.appendChild(newDiv);
+
+
+4. Accessing / Changing The HTML Content Of An Element: InnerHTML
+document.getElementById("header").textContent = "Hello World!";
+document.getElementsByTagName("div")[0].innerHTML = "<h1>Hello World!</h1>"
+
+
+5. Deleting Elements: RemoveChild()
+let parentElem = document.getElementById("main");
+let childElem = document.getElementById("hint");
+parentElem.removeChild(childElem);
+
+
+Some More Examples:
+// getElementById('id')
+document.getElementById('demo');
+
+// getElementsByClassName('class')
+document.getElementsByClassName('demo');
+
+// getElementsByTagName('tag')
+document.getElementsByTagName('p');
+
+// querySelector('css selector')
+document.querySelector('#demo-query');
+
+// querySelectorAll('css selector')
+    let demoQueryAll = document.querySelectorAll('.demo-query-all');
+
+    demoQueryAll.forEach(query => {
+      query.style.border = '1px solid green';
+    }); -->
+
+
+    <!-- <h1>Hello World</h1>
+    <div id="container">
+      <p>This is some text in a paragraph.</p>
+    </div>
+   JavaScript to add new element -->
+  <!-- <script>
+    // create a new paragraph element
+    let parrafo = document.createElement('p');
+    // add text to the new paragraph element
+    let texto = document.createTextNode('This is a new paragraph added using JavaScript!');
+    parrafo.appendChild(texto);
+    // get a reference to the container element
+    let container = document.getElementById('container');
+    // add the new paragraph element to the container
+    container.appendChild(parrafo);
+
+
+
+
+
+
+    document.getElementById("menu").style.background = "red";
+document.getElementById("menu").style.display = "block";
+
+let item = document.getElementById("menu");
+item.style.background = "red";
+item.style.display = "block";
+
+ </script> -->
+
+<!-- 
+<ul>
+      <li>The</li>
+      <li>test</li>
+    </ul>
+    <ul>
+      <li>has</li>
+      <li>passed</li>
+    </ul>
+
+
+    <script>
+      let elements = document.querySelectorAll('ul > li:last-child');
+
+      for (let elem of elements) {
+        alert(elem.innerHTML); // "test", "passed"
+      }
+
+    </script>
+  -->
+
+  <p id="p2">HELLO WORLD</p>
+  <SCRIPT>
+    document.getElementById("p2").style.color ="blue";
+  </SCRIPT>
+  
+
+
+
+
+</body>
+</html> -->
