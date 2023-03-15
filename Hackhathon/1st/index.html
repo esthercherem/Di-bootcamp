@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: orange;
+        background-image: url("/Hackhathon/1st/cancha3.png");
+        background-repeat: no-repeat;
+        background-size: auto;
+        font-style: oblique;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+
+    }
+
+    h1 {
+        color: red;
+        display: flex;
+        align-items: center;
+        margin-left: 500px;
+        
+    }
+
+   
+
+    #balon {
+        margin-top: 100px;
+        margin-left: 100px;
+        animation: bounce 1s ease-in-out infinite alternate;
+
+    }
+
+
+    @keyframes bounce {
+          from {
+              transform: translateY(40);
+          }
+          to {
+              transform: translateY(-400px);
+          }
+      }
+
+ 
+
+/* CSS FOR SCORE */
+
+    .table {
+  display: table; /* set the display property to table */
+  /* border-collapse: collapse; optional: remove border spacing */
+  margin-left: 1000px;
+}
+
+.table-header {
+  display: table-header-group; /* set the display property to table-header-group */
+  font-weight: bold; /* optional: make the header text bold */
+}
+
+.table-row {
+  display: table-row; /* set the display property to table-row */
+}
+
+.table-cell {
+  display: table-cell; /* set the display property to table-cell */
+  padding: 5px; /* add padding for visual separation */
+  border: 1px solid black; /* add a border for visual separation */
+}
+
+
+/* tabla de multiplicaciones */
+
+input {
+    display: inline-block;
+    width: 25px;
+
+}
+
+#multiplos, div{
+
+    /* display: none; */
+    display: inline-block;
+    /* margin-left: 1150px; */
+  
+
+
+}
+
+
+
+
+
+</style>
+
+<body>
+
+    <!-- TITULO -->
+
+    <h1>MINI GAME</h1>
+
+<!-- SCORE -->
+
+    <div class="table">
+        <div class="table-header">
+            <div id="score"><h2>SCORE</h2></div>
+        </div>
+        
+       
+        <div class="table-cell">
+            <div id="hits">HITS</div><br>
+            <div id="mistakes">MISTAKES</div>
+        </div> 
+        <div class="table-cell">
+            <div id="hitsResult">1</div><br>
+            <div id="mistakesResult">0</div>
+        </div>
+      </div>
+
+
+
+<!-- 
+    <div id="scoreContainer">
+        <div class="table-header"></div>
+        <div id="score">SCORE</div>
+        <div id="computer">Computer score</div>
+        <div id="player1">Player 1 score</div>
+        <div id="computerScore"></div>
+        <div id="player1Score"></div>
+    </div> -->
+
+<!-- 
+    tabla de multiplicaciones -->
+
+    <div id="multiplos">
+        <form onsubmit="submitForm(event)">
+
+        
+     
+    <div>0x9=</div><input type="number" id="inputField"><img src="play.png" id="play" height="75px" width="100px" onclick="function playRound ()"><br>
+    <div>1x9=</div><input type="number"id="inputField" onclick="function changeColor ()"><img src="play.png" height="75px" width="100px" onclick="function playRound ()"><br>
+    <div>2x9=</div><input type="number" id="inputField"><img src="play.png" height="75px" width="100px" onclick="function playRound ()"><br>
+    <div>3x9=</div><input type="number" id="inputField"><img src="play.png" height="75px" width="100px" onclick="function playRound ()"><br>
+    <div>4x9=</div><input type="number" id="inputField"><img src="play.png" height="75px" width="100px" onclick="function playRound ()"><br>
+    <div>5x9=</div><input type="number" id="inputField"><img src="play.png" height="75px" width="100px" onclick="function playRound ()"><br>
+    <div>6x9=</div><input type="number" id="inputField"><img src="play.png" height="75px" width="100px" onclick="function playRound ()"><br>
+    <div>7x9=</div><input type="number" id="inputField"><img src="play.png" height="75px" width="100px" onclick="function playRound ()"><br>
+    <div>8x9=</div><input type="number" id="inputField"><img src="play.png" height="75px" width="100px" onclick="function playRound ()"><br>
+    <div>9x9=</div><input type="number" id="inputField"><img src="play.png" height="75px" width="100px" onclick="function playRound ()"><br>
+    <div>10x9=</div><input type="number" id="inputField"><img src="play.png" height="75px" width="100px" onclick="function playRound ()"><br>
+</form>
+</div> 
+
+
+
+    <!-- <img src="cancha3.png" id="cancha" width="1250px" height="700px"> -->
+    <img src="balon4.png" id="balon" width="75px" height="75px">
+    <img src="balonnegro.png" id="balonnegro" width="75px" height="75px">
+    
+    
+
+
+
+
+</body>
+</html>
+
+
+
+<!-- hacer una tabla con las multiplicaciones del 9 
+cuando el jugador la tenga correcta el balon camina hata la canasta
+y el score agrega un punto a su calificacion 
+al final el ganador es el que mas tenga
+la computadora va a sacar numeros al azar en las tablas 
+cada vex que le atinen a un resultado va a salir la alerta, encestaste
+la tienes correcta 
+
+tengo que poner un titulo
+y las instrucciones
+hacer bien el score
+y agregarle la funcion al score -->
