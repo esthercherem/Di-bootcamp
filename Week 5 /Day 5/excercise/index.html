@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drumset sampler</title>
+
+
+
+    <style>
+        /* Basic styling for the buttons */
+button {
+	background-color: #333;
+	color: #fff;
+	padding: 10px 20px;
+	margin: 30px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+    transition: all 0.3s ease;
+margin-top: 100px;
+    justify-content: center;
+   
+  
+  
+}
+
+
+button:hover {
+	background-color: #444; 
+    transform: scale(1.1);
+  box-shadow: 0 0 10px yellow;
+}
+  
+button.active {
+    animation-name: pulse;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+  }
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(251, 232, 28, 0.5);
+      opacity: 1;
+    }
+    to {
+      transform: scale(1.2);
+      box-shadow: 0 0 10px rgba(251, 232, 28, 1);
+      opacity: 0.8;
+    }}
+
+body {
+    background-image: url("concierto.png");
+    color: white;
+
+    
+}
+h1 {
+    margin-left: 450px;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Drum Set Sampler</h1>
+	<div id= "buttons" class="drum-set">
+		<button class="kick">Kick</button>
+		<button class="snare">Snare</button>
+		<button class="hi-hat">Hi-Hat</button>
+        <button class="boom">Boom</button>
+		<button class="clap">Clap</button>
+		<button class="openhat">Openhat</button>
+        <button class="ride">Ride</button>
+		<button class="tink">Tink</button>
+		<button class="tom">Tom</button>
+	</div>
+    <script src="./script.js"></script>
+</body>

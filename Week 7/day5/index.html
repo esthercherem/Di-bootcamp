@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body {
+    background-color:  grey;
+    color:pink;
+    
+
+}
+
+button {
+    color: rgb(32, 212, 104);
+    border-radius: 10px;
+    background-color: beige;
+    padding: 5px;
+    border: solid pink;
+    
+}
+
+input {
+    color: palevioletred;
+    background-color: antiquewhite;
+    padding: 5px;
+    border-radius: 10px;
+    border: solid;
+}
+
+#quote-container, #section1, #section3 {
+
+    border: solid 5px palevioletred;
+    margin: 20px;
+    display: flexbox;
+    align-items: center;
+    margin-left: 250px;
+    margin-right: 250px;
+
+
+}
+
+
+</style>
+<body>
+    
+    <form id="section1">
+        <label for="quote-input">Quote:</label>
+        <input type="text" id="quote-input">
+        <label for="author-input">Author:</label>
+        <input type="text" id="author-input">
+        <button type="submit" id="add-quote">Add Quote</button>
+      </form>
+
+    <div id="quote-container">
+        <h2 id="quote"></h2>
+        <p id="author"></p>
+        <button id="new-quote">Generate Quote</button>
+        <button id="num-chars">Number of Characters (with spaces)</button>
+        <button id="num-chars-nospace">Number of Characters (without spaces)</button>
+        <button id="num-words">Number of Words</button>
+        <button id="like">Like</button>
+      </div>
+<div id="section3">
+    <form>
+        <label for="author-filter">Filter by author:</label>
+        <input type="text" id="author-filter">
+        <button type="submit" id="filter">Filter</button>
+    </form>
+
+    <div id="navigation">
+        <button id="previous-quote">Previous</button>
+        <button id="next-quote">Next</button>
+    </div>
+</div>
+    <script src="./script.js"></script>
+</body>
+</html>

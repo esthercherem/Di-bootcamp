@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>The every() Method</h2>
+<p id="demo"></p>
+
+
+<script>
+const ages = [32, 33, 16, 40];
+document.getElementById("demo").innerHTML = ages.every(checkAge);
+function checkAge(age) {
+  return age > 18;
+}
+
+var myarray = [1, 3, 5, 2, 4];
+var check = myarray.includes(3,2); 
+if (check==true)
+console.log("Found");
+else 
+{
+  console.log("Not found"); 
+}
+
+
+
+var myarray = [1, 3, 5, 2, 4];
+var check = myarray.includes(2);
+console.log(check);
+
+function checkYear(year) {
+    if(year> 2000) {
+        console.log("you are in the 21st century");
+
+    }else {
+        console.log("you live in the middle age");
+    }
+    }
+
+   checkYear(1985); //output: you live in the middle age
+checkYear(2021); // you ive in the 21st century.
+
+// <input type="text" id="yearInput" placeholder="enter a year"/>
+// <button onclick="checkYear()">check year</button>
+// <p id="output"></p>
+
+
+function checkYear() {
+    const year = document.getElementById("yearInput").value;
+    const message = year > 2000 ? "you are in the 21st century" : "you live in the middle age"
+    console.log(message);
+    document.getElementById("output").textContent = message;
+}
+
+
+const calculator = (num1, num2, operator) => {
+    const result = operator === "+" ? num1 + num2 :
+                   operator === "-" ? num1 - num2 :
+                   operator === "*" ? num1 * num2 :
+                   operator === "/" ? num1 / num2:
+                   "invalid operator";
+                   return result;
+};
+
+console.log(calculator(5, 7, "+")); //output: 12
+console.log(calculator(10, 3, "-")); //output: 7
+console.log(calculator(4, 6, "*")); //output: 24 
+console.log(calculator(2, 4, "/")); //
+
+
+
+</script>
+
+
+</body>
+</html>
