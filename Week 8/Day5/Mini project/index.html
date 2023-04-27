@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROBOTS WITH FILTER</title>
+    <style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(to left, rgba(7,27,82,1) 0%, rgba(0,128,128,1) 100%);
+}
+
+
+
+
+#cardContainer {
+  display: flex;
+  justify-content: center; /* Center the card container horizontally */
+  align-items: center; /* Center the card container vertically */
+  flex-wrap: wrap; /* Allow cards to wrap to next row if needed */
+  margin-top: 50px; /* Add top margin for spacing */
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  text-align: center;
+  background-color: #fff; /* Set card background color */
+  border-radius: 5px; /* Add border radius for rounded corners */
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.card p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+#searchBox {
+  margin-top: 20px; /* Add top margin for spacing */
+  margin-bottom: 20px; /* Add bottom margin for spacing */
+  margin-left: 550px; /* Add left margin to auto for centering horizontally */
+  margin-right: auto; /* Add right margin to auto for centering horizontally */
+  width: 300px;
+  padding: 10px;
+  text-align: center;
+  background-color: #fff; /* Set search box background color */
+  border: none;
+  border-radius: 5px; /* Add border radius for rounded corners */
+
+}
+
+#searchImg {
+  width: 350px;
+  height: 50px;
+  margin-bottom: 10px;
+  margin-top: 50px;
+  display: block; /* Center the image horizontally */
+  margin-left: auto; /* Center the image horizontally */
+  margin-right: auto; /* Center the image horizontally */
+}
+
+#searchBox::placeholder {
+  font-size: 12px;
+  color: #999;
+}
+
+
+/* Additional CSS for profile page */
+#profileContainer {
+    display: none;
+    /* display: flex; */
+    justify-content: center; /* Center the card container horizontally */
+    align-items: center; /* Center the card container vertically */
+    flex-wrap: wrap; /* Allow cards to wrap to next row if needed */
+    margin-top: 50px; /* Add top margin for spacing */
+}
+        
+#backBtn {
+    margin-bottom: 20px;
+    cursor: pointer;
+    background-color: #fff; /* Set background color */
+    color: #000; /* Set text color */
+    padding: 10px 20px; /* Add padding for spacing */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    font-size: 16px; /* Set font size */
+    font-weight: bold; /* Set font weight */
+    text-transform: uppercase; /* Convert text to uppercase */
+}
+        
+#profileImage {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#profileDetails {
+    margin-top: 20px;
+    color: #fff; /* Set text color to white */
+}
+ 
+      </style>
+    </head>
+    <body>
+
+      
+        <div id="searchBoxContainer">
+            <img id="searchImg" src="robofriends.png" alt="Placeholder Image">
+            <input type="text" id="searchBox" placeholder="Search by name">
+        </div>
+        <div id="cardContainer"></div>
+    
+        <div id="profileContainer">
+            <div id="backBtn">Back</div>
+            <img id="profileImage" src="" alt="Profile Image">
+            <div id="profileDetails"></div>
+        </div>
+
+    </body>
+    </html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST (DOM WEEK 5 DAY 5 DAILY CHALLENGE)</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 10;
+          padding: 10;
+          background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+        }
+        
+        h1 {
+          text-align: center;
+        }
+        
+        form {
+          display: flex; 
+          justify-content: center;
+          align-items: center; /* Center vertically */
+          /* margin: 20px 0; */
+          margin: 20px auto; /* Center the listTasks div horizontally */
+          max-width: 600px; /* Limit the width of the listTasks div */
+          background-color: white; /* Add a white background color */
+          padding: 20px; /* Add some padding */
+        }
+        
+        input[type="text"] {
+          flex-grow: 1;
+          margin-right: 10px;
+          padding: 5px;
+          font-size: 16px;
+        }
+        
+        button[type="button"] {
+          padding: 5px 10px;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          cursor: pointer;
+        }
+        
+        button[type="button"]:hover {
+          background-color: #3E8E41;
+        }
+        
+        .listTasks {
+          margin: 20px auto; /* Center the listTasks div horizontally */
+          max-width: 600px; /* Limit the width of the listTasks div */
+          background-color: white; /* Add a white background color */
+          padding: 20px; /* Add some padding */
+        }
+        
+        .task {
+          display: flex;
+          align-items: center;
+          margin: 10px 0;
+        }
+        
+        .task label {
+          margin-left: 10px;
+          font-size: 16px;
+        }
+        
+        .task input[type="checkbox"] {
+          margin-right: 10px;
+        }  
+
+        h1 {
+            color: white;
+        }
+      </style>
+      
+      
+</head>
+<body>
+    <h1>To-Do List</h1>
+      <form>
+        <input type="text" id="newTask" placeholder="Add a new task">
+        <button type="button" id="addButton" onclick="addTask()">Add</button>
+      </form>
+      <div class="listTasks"></div>
+<script src="script.js"></script>
+  </body>
+</html>
