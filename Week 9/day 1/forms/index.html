@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<!-- excercise 1 -->
+
+<h1> login Form</h1>
+<form>
+    <label for="username">Username:</label>
+    <input type ="text" id="username" name="username" required><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    <input type="submit" value="login">
+</form>
+
+
+<!-- excercise 2  -->
+
+<h1> search form</h1>
+<form method="GET" action="https://www.google.com/search"> 
+    <!-- en este caso el action es un API que me lleva a google
+    y el for el id y el name a fuerza tiene que ser = q , esto hace que busque en google -->
+    <label for="q">Search:</label>
+    <input type="text" id="q" name= "q" required><br><br>
+    <input type="submit" value="search">
+</form>
+
+
+<!-- EXCERCISE 3 -->
+
+<button id="generate-response">Generate Response</button>
+<p id="response"></p>
+
+
+
+
+
+
+</body>
+</html>
