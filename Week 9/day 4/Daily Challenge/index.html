@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+body {
+
+    background-color: grey;
+    color: white;
+    
+    
+
+}
+
+input {
+
+    background-color: rgb(222, 190, 131);
+    color: white;
+    border-radius: 50px;
+    border: solid 4px white;
+
+}
+
+button {
+
+    background-color: rgb(137, 28, 28);
+    color: white;
+    border-radius: 50px;
+    border: solid 4px white;
+    
+}
+
+.gif-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.gif-list div {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+
+</style>
+<body>
+    
+    <form>
+        <label for="category-input">Enter a category:</label>
+        <input type="text" id="category-input" name="category">
+        <button type="submit">Fetch Gif</button>
+    </form>
+    <div class="gif-list"></div>
+    <button class="delete-all-btn">Delete All</button>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
