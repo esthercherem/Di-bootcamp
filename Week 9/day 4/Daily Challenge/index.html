@@ -10,33 +10,88 @@
 <style>
 
 body {
-
-    background-color: grey;
-    color: white;
-    
-    
-
+  background-color: black;
 }
 
-input {
-
-    background-color: rgb(222, 190, 131);
-    color: white;
-    border-radius: 50px;
-    border: solid 4px white;
-
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-button {
+label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
-    background-color: rgb(137, 28, 28);
-    color: white;
-    border-radius: 50px;
-    border: solid 4px white;
-    
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #ccc;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
 }
 
 .gif-list {
+  display: flex;
+  flex-direction: column; /* Change to column */
+  align-items: center;
+}
+
+.gif-list div {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.gif-list img {
+  max-width: 300px;
+}
+
+.gif-list button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+
+
+.delete-all-btn {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+/* //.gif-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -47,8 +102,7 @@ button {
   flex-direction: column;
   align-items: center;
   position: relative;
-}
-
+} */
 
 </style>
 <body>
