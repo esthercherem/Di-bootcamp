@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars AJAX API</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<style>
+    body {
+      
+    /* background-color: #000; */
+    background-image: url('star.gif');
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+
+#character-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #000;
+  border: 3px solid #ffcf2d;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ffcf2d;
+}
+
+#get-character-btn {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffcf2d;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 200px;
+    border-top: 1px solid #fff;
+}
+
+
+
+#get-character-btn:hover {
+    background-color: #f8e600;
+    color: #000;
+}
+
+.fa-spinner {
+    font-size: 3rem;
+    margin: 2rem;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 0.5rem;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border-bottom: 2px solid #ffcf2d;
+}
+
+#header img {
+    height: 100%;
+    max-width: 100%;
+}
+
+</style>
+
+</head>
+<body>
+    <div id="header">
+        <img src="starw.png" alt="Star Wars API Logo">
+    </div>
+    <div id="character-info">
+        <!-- Character information will be appended here -->
+      </div>
+      <button id="get-character-btn">Get Random Character</button>
+      
+
+    <script src="script.js"></script>
+</body>
+</html>
