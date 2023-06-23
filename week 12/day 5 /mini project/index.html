@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calendario con Tareas</title>
+  <style>
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+    }
+
+    .day {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .weekday {
+      font-weight: bold;
+    }
+
+    .task {
+      background-color: #f2f2f2;
+      padding: 5px;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="calendar"></div>
+
+  <script>
+    // Datos de ejemplo: tareas para cada día del mes
+    const tasks = {
+      2: ['Tarea 1', 'Tarea 2'],
+      10: ['Tarea 3'],
+      15: ['Tarea 4', 'Tarea 5', 'Tarea 6'],
+      25: ['Tarea 7'],
+    };
+
+    // Obtén el elemento del calendario
+    const calendar = document.getElementById('calendar');
+
+    // Función para crear el calendario
+    function createCalendar() {
+      // Obtiene la fecha actual
+      const currentDate = new Date();
+
+      // Establece la fecha al primer día del mes actual
+      currentDate.setDate(1);
+
+      // Obtiene el número del mes actual
+      const currentMonth = currentDate.getMonth();
+
+      // Crea una tabla para mostrar el calendario
+      const table = document.createElement('table');
+      table.classList.add('calendar');
+
+      // Crea una fila para los nombres de los días de la semana
+      const weekdaysRow = document.createElement('tr');
+      const daysOfWeek = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+      for (let i = 0; i < 7; i++) {
+        const weekdayCell = document.createElement('th');
+        weekdayCell.classList.add('weekday');
+        weekdayCell.textContent = daysOfWeek[i];
+        weekdaysRow.appendChild(weekdayCell);
+      }
+      table.appendChild(weekdaysRow);
+
+      // Crea las celdas de los días del mes
+      while (currentDate.getMonth() === currentMonth) {
+        const day = currentDate.getDate();
+        const dayOfWeek = currentDate.getDay();
+
+        const dayCell = document.createElement('td');
+        dayCell.classList.add('day');
+        dayCell.textContent = day;
+
+        // Verifica si hay tareas para este día
+        if (tasks[day]) {
+          tasks[day].forEach(task => {
+            const taskElement = document.createElement('button');
+            taskElement.classList.add('task');
+            taskElement.textContent = task;
+            taskElement.addEventListener('click', () => {
+              editTaskDescription(taskElement, day, task);
+            });
+            dayCell.appendChild(taskElement);
+          });
+        }
+
+        // Marca el día actual
+        if (currentDate.toDateString() === (new Date()).toDateString()) {
+          dayCell.classList.add('current-day');
+        }
+
+        table.appendChild(dayCell);
+
+        // Avanza al siguiente día
+        currentDate.setDate(currentDate.getDate() + 1);
+      }
+
+      // Agrega la tabla al calendario
+      calendar.appendChild(table);
+    }
+
+    // Función para editar la descripción de una tarea
+    function editTaskDescription(taskElement, day, task) {
+      const newDescription = prompt('Ingrese la nueva descripción:', taskElement.textContent);
+      if (newDescription !== null) {
+        taskElement.textContent = newDescription;
+        // Actualizar la descripción en el objeto tasks
+        const dayTasks = tasks[day];
+        const taskIndex = dayTasks.indexOf(task);
+        dayTasks[taskIndex] = newDescription;
+      }
+    }
+
+    // Crea el calendario al cargar la página
+    createCalendar();
+  </script>
+</body>
+</html>

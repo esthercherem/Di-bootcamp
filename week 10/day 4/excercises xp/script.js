@@ -42,6 +42,6 @@ fetch("https://www.swapi.tech/api/starships/9/")
 // Analyse the code provided above before executing it - what will be the outcome?
 
 
- it will come the calling first, because the other will come out after 2 segs aprox.
+ //it will come the calling first, because the other will come out after 2 segs aprox.
 
 
