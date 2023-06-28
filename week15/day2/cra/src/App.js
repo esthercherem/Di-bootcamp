@@ -65,16 +65,37 @@
 //   return favorites.map((favorite, i) => <li key={i}>{favorite}</li>);
 // }
 
-import React from 'react';
-import {Exercise4} from './components/Exercise4';
+// import React from 'react';
+// import {Exercise4} from './components/Exercise4';
 
-export const App = () => {
-  return (
-    <div>
-      <Exercise4 />
-    </div>
-  );
-};
+// export const App = () => {
+//   return (
+//     <div>
+//       <Exercise4 />
+//     </div>
+//   );
+// };
+
+
+import React from "react";
+import { DemoCarousel } from "./components/DemoCarousel";
+
+export function App() {
+  return(
+    <>
+    <DemoCarousel />
+    </>
+  )
+}
+
+
+// export const App = () => {
+//   return (
+//     <div>
+//       <Exercise4 />
+//     </div>
+//   );
+// };
 
 
 
