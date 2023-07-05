@@ -1,155 +1,187 @@
-import React, { useState } from 'react';
-
-function App() {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    age: '',
-    gender: 'male',
-    destination: '',
-    lactoseFree: false,
-    nutsFree: false,
-    veganMeal: false,
-  });
-
-  const handleChange = (event) => {
-    const { name, value, type, checked } = event.target;
-    const newValue = type === 'checkbox' ? checked : value;
-
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: newValue,
-    }));
-  };
+// // Exercise XP 1 : React Error Boundary Simulation
 
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  
-    const urlParams = new URLSearchParams({
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      age: formData.age,
-      gender: formData.gender,
-      destination: formData.destination,
-      lactoseFree: formData.lactoseFree ? 'on' : '',
-      nutsFree: formData.nutsFree ? 'on' : '',
-      veganMeal: formData.veganMeal ? 'on' : '',
-    }).toString();
-    
-    const url = `http://localhost:3000/?${urlParams}`;
-    
-    window.location.href = url;
-  };
+// import React from 'react';
+// import BuggyCounter from './BuggyCounter';
+// import ErrorBoundary from './ErrorBoundary';
 
-  return (
-    <div>
-      <h2>Entered information:</h2>
-      <p>Online Learning</p>
-      <p>Your name: {formData.firstName} {formData.lastName}</p>
-      <p>Your age: {formData.age}</p>
-      <p>Your gender: {formData.gender}</p>
-      <p>Your destination: {formData.destination}</p>
-      <p>Your dietary restrictions:</p>
-      <ul>
-        <li>Nuts free: {formData.nutsFree ? 'Yes' : 'No'}</li>
-        <li>Lactose free: {formData.lactoseFree ? 'Yes' : 'No'}</li>
-        <li>Vegan meal: {formData.veganMeal ? 'Yes' : 'No'}</li>
-      </ul>
+// function App() {
+//   return (
+//     <div>
+//       <ErrorBoundary>
+//         <BuggyCounter />
+//       </ErrorBoundary>
+//     </div>
+//   );
+// }
 
-      <h2>Enter information:</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="firstName"
-          value={formData.firstName}
-          onChange={handleChange}
-          placeholder="Your First Name"
-        />
-        <br />
-        <input
-          type="text"
-          name="lastName"
-          value={formData.lastName}
-          onChange={handleChange}
-          placeholder="Your Last Name"
-        />
-        <br />
-        <input
-          type="number"
-          name="age"
-          value={formData.age}
-          onChange={handleChange}
-          placeholder="Your Age"
-        />
-        <br />
-        <label>
-          <input
-            type="radio"
-            name="gender"
-            value="male"
-            checked={formData.gender === 'male'}
-            onChange={handleChange}
-          />
-          Male
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="gender"
-            value="female"
-            checked={formData.gender === 'female'}
-            onChange={handleChange}
-          />
-          Female
-        </label>
-        <br />
-        <select
-          name="destination"
-          value={formData.destination}
-          onChange={handleChange}
-        >
-          <option value="">Select your destination</option>
-          <option value="Japan">Japan</option>
-          <option value="USA">USA</option>
-          <option value="UK">UK</option>
-          <option value="Canada">Canada</option>
-        </select>
-        <br />
-        <label>
-          <input
-            type="checkbox"
-            name="lactoseFree"
-            checked={formData.lactoseFree}
-            onChange={handleChange}
-          />
-          Lactose free
-        </label>
-        <br />
-        <label>
-          <input
-            type="checkbox"
-            name="nutsFree"
-            checked={formData.nutsFree}
-            onChange={handleChange}
-          />
-          Nuts free
-        </label>
-        <br />
-        <label>
-          <input
-            type="checkbox"
-            name="veganMeal"
-            checked={formData.veganMeal}
-            onChange={handleChange}
-          />
-          Vegan meal
-        </label>
-        <br />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  );
-}
+// export default App;
 
-export default App;
+
+
+// EXERCISE 2
+
+// import React from 'react';
+// import Color from "./components/Color.Components"; 
+
+
+// function App() {
+//   return (
+//     <>
+//     <Color />
+//     </>
+//   );
+// }
+
+// export default App;
+
+
+
+//EXERCISE 2
+
+
+// import React from 'react';
+
+// class App extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       favoritecolor: "red",
+//       favoritecolor2: "red",
+//       favoritecolor3: "red"
+//     };
+//   }
+
+//   //Exercise 1
+//   componentDidMount() {
+//     setTimeout(() => {
+//       this.setState({favoritecolor: "yellow"})
+//     }, 5000)
+//   }
+
+//   changeColorHeader = () => {
+//     this.setState({favoritecolor2: "blue"});
+//   }
+
+//   //Exercise 3
+//   shouldComponentUpdate() {
+//     return true;
+//     //return false;
+//   }
+//   changeColor = () => {
+//     this.setState({favoritecolor3: "blue"});
+//   }
+
+
+//   render() {
+//     return (
+//       <div>
+//       <p>Exercise 1:</p>
+//       <h1>My Favorite Color is <em>{this.state.favoritecolor}</em></h1>
+
+//       <p>Exercise 2:</p>
+//       <h1>My Favorite Color is {this.state.favoritecolor2}</h1>
+//       <button type="button" onClick={this.changeColorHeader}>Change color</button>
+
+//       <p>Exercise 3:</p>
+//       <h1>My Favorite Color is <em>{this.state.favoritecolor3}</em></h1>
+//       <button type="button" onClick={this.changeColor}>Change color</button>
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
+
+
+
+
+// EXERCISE XP #2 REACT LIFECYCLES
+
+
+// import React from 'react';
+
+
+// class App extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       favoritecolor: "red",
+
+//       //Exercise 3
+//       show: true
+//     };
+//   }
+//   componentDidMount() {
+//     setTimeout(() => {
+//       this.setState({favoritecolor: "yellow"})
+//     }, 5000)
+//   }
+
+//   //Exercise 1
+//   // componentDidUpdate() {
+//   //   document.getElementById("mydiv").innerHTML =
+//   //   "The updated favorite is " + this.state.favoritecolor;
+//   // }
+
+//   //Exercise 2
+//   getSnapshotBeforeUpdate(prevProps, prevState) {
+//     document.getElementById("div1").innerHTML =
+//     "Before the update, the favorite was " + prevState.favoritecolor;
+//   }
+
+//   //Exercise 2
+//   componentDidUpdate() {
+//     document.getElementById("div2").innerHTML =
+//     "The updated favorite is " + this.state.favoritecolor;
+//   }
+
+//   //Exercise 3
+//   delHeader = () => {
+//     this.setState({show: false});
+//   }
+
+//   render() {
+
+//     //Exercise 3
+//     let myheader;
+//     if (this.state.show) {
+//       myheader = <Child />;
+//     };
+
+
+//     return (
+//       <div>
+
+//       <p>Exercise 1:</p>
+//       <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+//       <div id="mydiv"></div>
+
+//       <p>Exercise 2:</p>
+//       <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+//       <div id="div1"></div>
+//       <div id="div2"></div>
+
+//       <p>Exercise 3:</p>
+//       {myheader}
+//       <button type="button" onClick={this.delHeader}>Delete Header</button>
+
+
+//       </div>
+//     );
+//   }
+// }
+
+// //Exercise 3
+// class Child extends React.Component {
+//   componentWillUnmount() {
+//     alert("The component named Header is about to be unmounted.");
+//   }
+//   render() {
+//     return (
+//       <h1>Hello World!</h1>
+//     );
+//   }
+// }
+
+// export default App;
