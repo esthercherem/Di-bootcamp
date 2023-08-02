@@ -30,13 +30,12 @@ import "./App.css";
 export default function App() {
   const { currentDay } = useSelector((state) => state.day);
   const dispatch = useDispatch();
+
   return (
     <div className="App">
       <h1> Today is: {currentDay}</h1>
-      <button onClick={() => dispatch(setPreviousDay())}>previous day</button>
-      <button onClick={() => dispatch(setNextDay())}>next day</button>
-      
-     
+      <button onClick={() => dispatch(setPreviousDay())}>Previous Day</button>
+      <button onClick={() => dispatch(setNextDay())}>Next Day</button>
     </div>
   );
 }
