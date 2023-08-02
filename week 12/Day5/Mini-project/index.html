@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special To Do List</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #66cc66, #3366cc);
+        animation: gradientAnimation 10s infinite alternate;
+    }
+
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+
+    h1 {
+        color: #fff;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    input[type="text"],
+    textarea,
+    input[type="datetime-local"] {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    input[type="datetime-local"] {
+        text-align: center; /* Centrar el texto */
+    }
+
+    button[type="submit"] {
+        padding: 8px 15px;
+        background-color: #3366cc;
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #5588dd;
+    }
+
+    h2 {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    li {
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        width: 400px;
+        text-align: center;
+    }
+
+    .days-remaining {
+        font-weight: bold;
+        color: #3366cc;
+    }
+</style>
+</head>
+<body>
+    <h1>Special To-Do List</h1>
+    <div class="form-container">
+        <form id="task-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="description">Description:</label>
+            <textarea id="description"></textarea>
+            <label for="start-date">Start Date and Time:</label>
+            <input type="datetime-local" id="start-date" required>
+            <label for="end-date">End Date and Time:</label>
+            <input type="datetime-local" id="end-date" required>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+
+    <h2>Task List</h2>
+    <ul id="task-list"></ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const taskForm = document.getElementById('task-form');
+            const taskList = document.getElementById('task-list');
+
+            taskForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const description = document.getElementById('description').value;
+                const startDate = new Date(document.getElementById('start-date').value);
+                const endDate = new Date(document.getElementById('end-date').value);
+                const isCompleted = false;
+
+                const task = {
+                    name: name,
+                    description: description,
+                    startDate: startDate,
+                    endDate: endDate,
+                    isCompleted: isCompleted
+                };
+
+                // Get existing tasks from localStorage
+                let tasks = localStorage.getItem('tasks');
+                tasks = tasks ? JSON.parse(tasks) : [];
+
+                // Add new task to the array
+                tasks.push(task) ;
+
+                // Save updated tasks to localStorage
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+
+                // Clear form inputs
+                taskForm.reset();
+
+                // Update task list display
+                displayTasks();
+            });
+
+            // Function to display tasks
+            function displayTasks() {
+                taskList.innerHTML = ''; // Clear previous tasks
+
+                // Get tasks from localStorage
+                let tasks = localStorage.getItem('tasks');
+                tasks = tasks ? JSON.parse(tasks) : [];
+
+                // Iterate over tasks and create list items
+                tasks.forEach(function(task) {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <strong>Name:</strong> ${task.name}<br>
+                        <strong>Start Date:</strong> ${task.startDate}<br>
+                        <strong>End Date:</strong> ${task.endDate}<br>
+                        <strong>Days Remaining:</strong> ${calculateDaysRemaining(new Date(task.endDate))}<br>
+                        <button class="edit-button">Edit</button>
+                        `;
+                    taskList.appendChild(listItem);});
+ 
+                    
+                    const editButtons = taskList.querySelectorAll('.edit-button');
+    editButtons.forEach(function(button, index) {
+        button.addEventListener('click', function() {
+            handleEditTask(index);
+        });
+    });
+}
+
+// Function to handle the edit functionality for a task
+function handleEditTask(taskIndex) {
+    // Get tasks from localStorage
+    let tasks = localStorage.getItem('tasks');
+    tasks = tasks ? JSON.parse(tasks) : [];
+
+    // Retrieve the task at the specified index
+    const task = tasks[taskIndex];
+
+                listItem.querySelector('.edit-button').addEventListener('click', function() {
+    // Obtener los detalles de la tarea
+    const taskName = task.name;
+    const taskDescription = task.description;
+    const taskStartDate = formatDate(task.startDate);
+    const taskEndDate = formatDate(task.endDate);
+
+    // Rellenar los campos del formulario de edición
+    document.getElementById('edit-name').value = taskName;
+    document.getElementById('edit-description').value = taskDescription;
+    document.getElementById('edit-start-date').value = taskStartDate;
+    document.getElementById('edit-end-date').value = taskEndDate;
+});
+
+            }
+
+            // Function to calculate days remaining
+            function calculateDaysRemaining(endDate) {
+                const currentDate = new Date();
+                const remainingTime = endDate.getTime() - currentDate.getTime();
+                const daysRemaining = Math.ceil(remainingTime / (1000 * 60 * 60 * 24));
+                return daysRemaining;
+            }
+
+            // Load and display tasks on page load
+            displayTasks();
+
+
+            console.log(localStorage.getItem('tasks'));
+        });
+
+        
+    </script>
+</body>
+</html>
