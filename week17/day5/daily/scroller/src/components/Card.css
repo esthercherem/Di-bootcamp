@@ -1,0 +1,38 @@
+.card {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding-inline: 1em;
+    margin-bottom: 1em;
+    max-width: 200px;
+    margin-inline: auto;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.card:hover {
+    opacity: 1;
+    scale: 1.03;
+}
+
+
+.card h2,
+.card h3 {
+    margin-top: 0.5em;
+    margin-block: 0.3em;
+}
+
+.card h2 {
+    font-size: 0.75rem;
+}
+
+.card_subtitle {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.card_subtitle i {
+    font-size: 0.75rem;
+}

@@ -1,0 +1,12 @@
+body {
+  background-color: aquamarine;
+  font-family: 'Roboto', sans-serif;
+
+
+}
+
+.app {
+
+  max-height: 80vh;
+  overflow-y: scroll;
+}
